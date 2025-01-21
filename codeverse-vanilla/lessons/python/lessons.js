@@ -179,8 +179,9 @@ output2 = "John Tan"
 sys.stdin = StringIO()
 sys.stdin.write(output1 + "\\n" + output2)
 sys.stdin.seek(0)
+sys.stdout = StringIO()
 ${code}
-output = str(sys.stdout)
+output = sys.stdout.getvalue()
 test_result = output.strip()[-11:] == output2 + "\\n" + output1`
         break;
 
